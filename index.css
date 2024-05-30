@@ -35,7 +35,8 @@ body {
 }
 
 .header__theme-toggle-btn img {
-    margin-right: 8px; /* Space between icon and text */
+    margin-right: 8px; 
+    width: 20px;
 }
 
 main {
@@ -51,8 +52,8 @@ main {
 }
 
 .search-filter__input {
-    padding-left: 40px; /* Adjust to make space for the icon */
     padding: 12px 20px;
+    padding-left: 60px; /* Adjust to make space for the icon */
     border: none;
     border-radius: 5px;
     font-size: 16px;
@@ -63,14 +64,16 @@ main {
 
 .search-icon {
     position: absolute;
+    width: 15px;
     top: 50%;
-    left: 10px; /* Adjust as necessary */
+    left: 20px; /* Adjust as necessary */
     transform: translateY(-50%);
     pointer-events: none; /* Prevent the icon from blocking input clicks */
 }
 
 .search-filter__select {
     padding: 12px 20px;
+    /* padding-right: 40px; */
     border: none;
     border-radius: 5px;
     font-size: 16px;
@@ -186,4 +189,78 @@ body.light-mode {
     --header-bg-color: hsl(0, 0%, 100%);
     --input-bg-color: hsl(0, 0%, 98%);
     --element-bg-color: hsl(0, 0%, 100%);
+}
+
+
+
+
+/* ///specific styling for the country detail page */
+
+/* Add these styles for the back button and country detail elements */
+/* index.css */
+
+/* Existing styles for main page */
+
+/* New styles for country detail page */
+
+/* Add these styles for the back button and country detail elements */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 20px;
+    background-color: var(--element-bg-color);
+    color: var(--text-color);
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.back-button img {
+    margin-right: 8px;
+    width: 30px;
+}
+
+#country-details img {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+#country-details {
+    padding: 20px;
+    background-color: var(--element-bg-color);
+    color: var(--text-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#country-details h2 {
+    margin-top: 0;
+}
+
+#country-details p {
+    margin: 10px 0;
+}
+
+/* Style for border country buttons */
+.border-country-button {
+    display: inline-block;
+    margin: 0 10px 10px 0;
+    padding: 8px 16px;
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    /* Adjustments for mobile view */
+    .back-button {
+        margin: 10px;
+    }
+
+    .border-country-button {
+        margin: 0 10px 10px 0;
+    }
 }

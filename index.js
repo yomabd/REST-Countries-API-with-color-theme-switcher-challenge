@@ -81,7 +81,7 @@ function toggleTheme() {
   const currentTheme = isDarkMode ? "Light Mode" : "Dark Mode";
 
   themeToggleBtn.innerHTML = `
-    <img src="path/to/crescent-icon.png" alt="Crescent Icon">
+    <img src="./assets/crescent-icon.svg" alt="Crescent Icon">
     ${currentTheme}
   `;
 }

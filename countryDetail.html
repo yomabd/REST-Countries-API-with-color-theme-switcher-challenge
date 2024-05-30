@@ -3,19 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Country Detail</title>
+    <title>Country Explorer</title>
     <link rel="stylesheet" href="./index.css">
 </head>
-<body>
+<body class="">
     <header class="header">
-        <h1 class="header__title">Country Detail</h1>
-        <button class="header__back-btn" onclick="goBack()">Back</button>
+        <h1 class="header__title">Where in the World?</h1>
+        <button class="header__theme-toggle-btn" id="theme-toggle-btn">
+            <img src="./assets/crescent-icon.svg" alt="Crescent Icon">
+            Dark Mode
+        </button>
     </header>
     <main>
-        <div class="country-details" id="country-details"></div>
+        <button class="back-button" id="back-button">
+            <img src="./assets/back-arrow.svg" alt="Back Icon">
+            Back
+        </button>
+        <div id="country-details">
+            <img src="#" alt="Country Flag" id="country-flag">
+            <h2 id="country-name"></h2>
+            <p><strong>Native Name:</strong> <span id="native-name"></span></p>
+            <p><strong>Population:</strong> <span id="population"></span></p>
+            <p><strong>Region:</strong> <span id="region"></span></p>
+            <p><strong>Sub Region:</strong> <span id="sub-region"></span></p>
+            <p><strong>Capital:</strong> <span id="capital"></span></p>
+            <p><strong>Top Level Domain:</strong> <span id="top-level-domain"></span></p>
+            <p><strong>Currencies:</strong> <span id="currencies"></span></p>
+            <p><strong>Languages:</strong> <span id="languages"></span></p>
+            <div id="border-countries"></div>
+        </div>
     </main>
 
-    <script src="./index.js"></script>
     <script src="./countryDetail.js"></script>
 </body>
 </html>
