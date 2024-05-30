@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function displayCountryDetail() {
     const selectedCountry = JSON.parse(localStorage.getItem("selectedCountry"));
+    console.log(selectedCountry);
 
     if (selectedCountry) {
       const flagUrl = selectedCountry.flags.svg;
@@ -49,6 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
         ", "
       );
       const borderCountriesValue = selectedCountry.borders || [];
+      // console.log(borderCountriesValue);
+      // borderCountriesValue = borderCountriesValue.map();
 
       countryFlag.src = flagUrl;
       countryName.textContent = name;
