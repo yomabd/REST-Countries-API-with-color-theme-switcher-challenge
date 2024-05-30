@@ -1,10 +1,11 @@
-
+/* Reset CSS */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Base styles */
 body {
     font-family: 'Nunito Sans', sans-serif;
     background-color: var(--bg-color);
@@ -33,6 +34,29 @@ body {
     font-size: 16px;
 }
 
+/* For Dark Mode */
+.theme-toggle-btn::before {
+    content: '';
+    display: inline-block;
+    width: 8px; /* Adjust size as needed */
+    height: 8px; /* Adjust size as needed */
+    border-radius: 50%;
+    background-color: white; /* Adjust color as needed */
+    margin-right: 5px; /* Adjust the spacing between the shape and text */
+}
+
+/* For Light Mode */
+.light-mode .theme-toggle-btn::before {
+    content: '';
+    display: inline-block;
+    width: 8px; /* Adjust size as needed */
+    height: 8px; /* Adjust size as needed */
+    border-radius: 50%;
+    background-color: black; /* Adjust color as needed */
+    margin-right: 5px; /* Adjust the spacing between the shape and text */
+}
+
+
 main {
     padding: 30px;
 }
@@ -44,21 +68,16 @@ main {
     margin-bottom: 30px;
 }
 
-.search-filter__input {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    width: 300px;
-}
-
+.search-filter__input,
 .search-filter__select {
     padding: 12px 20px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
-    background-color: var(--input-bg-color);
-    color: var(--text-color);
+}
+
+.search-filter__input {
+    width: 300px;
 }
 
 .country-cards {
@@ -111,7 +130,8 @@ main {
         flex-direction: column;
     }
 
-    .search-filter__input, .search-filter__select {
+    .search-filter__input,
+    .search-filter__select {
         width: 100%;
         margin-bottom: 10px;
     }
@@ -155,14 +175,6 @@ body.dark-mode {
 }
 
 /* Light Mode */
-:root {
-    --bg-color: hsl(0, 0%, 98%);
-    --text-color: hsl(200, 15%, 8%);
-    --header-bg-color: hsl(0, 0%, 100%);
-    --input-bg-color: hsl(0, 0%, 98%);
-    --element-bg-color: hsl(0, 0%, 100%);
-}
-
 body.light-mode {
     --bg-color: hsl(0, 0%, 98%);
     --text-color: hsl(200, 15%, 8%);

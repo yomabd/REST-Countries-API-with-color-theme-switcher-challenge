@@ -6,6 +6,7 @@ const regionSelect = document.getElementById("region-select");
 const themeToggleBtn = document.getElementById("theme-toggle-btn");
 
 let countriesData = [];
+let isDarkMode = false;
 
 // Event listeners
 searchInput.addEventListener("input", handleSearch);
@@ -75,10 +76,9 @@ function handleFilter() {
 
 // Function to toggle between light and dark mode
 function toggleTheme() {
-  document.body.classList.toggle("dark-mode");
-  const currentTheme = document.body.classList.contains("dark-mode")
-    ? "Light Mode"
-    : "Dark Mode";
+  isDarkMode = !isDarkMode;
+  document.body.classList.toggle("dark-mode", isDarkMode);
+  const currentTheme = isDarkMode ? "Light Mode" : "Dark Mode";
   themeToggleBtn.textContent = currentTheme;
 }
 
@@ -88,7 +88,7 @@ function showCountryDetail(countryName) {
     (country) => country.name.common === countryName
   );
   localStorage.setItem("selectedCountry", JSON.stringify(selectedCountry));
-  window.location.href = "countryDetail.html"; // Updated filename
+  window.location.href = "countryDetail.html";
 }
 
 // Function to attach click event listeners to each card
@@ -100,4 +100,33 @@ function attachClickListeners() {
       showCountryDetail(countryName);
     });
   });
+}
+
+// Function to toggle between light and dark mode
+function toggleTheme() {
+  isDarkMode = !isDarkMode;
+  document.body.classList.toggle("dark-mode", isDarkMode);
+  const currentTheme = isDarkMode ? "Light Mode" : "Dark Mode";
+  themeToggleBtn.textContent = currentTheme;
+
+  // Update theme variables for light mode
+  if (!isDarkMode) {
+    document.documentElement.style.setProperty("--bg-color", "hsl(0, 0%, 98%)");
+    document.documentElement.style.setProperty(
+      "--text-color",
+      "hsl(200, 15%, 8%)"
+    );
+    document.documentElement.style.setProperty(
+      "--header-bg-color",
+      "hsl(0, 0%, 100%)"
+    );
+    document.documentElement.style.setProperty(
+      "--input-bg-color",
+      "hsl(0, 0%, 98%)"
+    );
+    document.documentElement.style.setProperty(
+      "--element-bg-color",
+      "hsl(0, 0%, 100%)"
+    );
+  }
 }
