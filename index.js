@@ -19,6 +19,7 @@ async function fetchCountries() {
     const data = await response.json();
     countriesData = data;
     renderCountries(countriesData);
+    attachClickListeners();
   } catch (error) {
     console.log("Error fetching countries:", error);
   }
@@ -87,5 +88,16 @@ function showCountryDetail(countryName) {
     (country) => country.name.common === countryName
   );
   localStorage.setItem("selectedCountry", JSON.stringify(selectedCountry));
-  window.location.href = "detail.html";
+  window.location.href = "countryDetail.html"; // Updated filename
+}
+
+// Function to attach click event listeners to each card
+function attachClickListeners() {
+  const countryCards = document.querySelectorAll(".card");
+  countryCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const countryName = card.querySelector("h2").textContent;
+      showCountryDetail(countryName);
+    });
+  });
 }
