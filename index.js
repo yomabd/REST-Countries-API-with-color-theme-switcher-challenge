@@ -104,10 +104,26 @@ function attachClickListeners() {
 
 // Function to toggle between light and dark mode
 function toggleTheme() {
-  isDarkMode = !isDarkMode;
-  document.body.classList.toggle("dark-mode", isDarkMode);
-  const currentTheme = isDarkMode ? "Light Mode" : "Dark Mode";
+  // isDarkMode = !isDarkMode;
+  // document.body.classList.toggle("dark-mode", isDarkMode);
+  // const currentTheme = isDarkMode ? "Light Mode" : "Dark Mode";
+  // themeToggleBtn.textContent = currentTheme;
+
+  document.body.classList.toggle("dark-mode");
+  const currentTheme = document.body.classList.contains("dark-mode")
+    ? "Light Mode"
+    : "Dark Mode";
   themeToggleBtn.textContent = currentTheme;
+
+  // Toggle crescent shape color
+  themeToggleBtn.classList.toggle(
+    "dark-mode",
+    document.body.classList.contains("dark-mode")
+  );
+  themeToggleBtn.classList.toggle(
+    "light-mode",
+    !document.body.classList.contains("dark-mode")
+  );
 
   // Update theme variables for light mode
   if (!isDarkMode) {
