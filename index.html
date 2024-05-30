@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Explorer</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Country Explorer</h1>
+        <button class="header__theme-toggle-btn" id="theme-toggle-btn">Dark Mode</button>
+    </header>
+    <main>
+        <div class="search-filter">
+            <input type="text" class="search-filter__input" id="search-input" placeholder="Search for a country...">
+            <select class="search-filter__select" id="region-select">
+                <option value="all">All</option>
+                <option value="Africa">Africa</option>
+                <option value="Americas">Americas</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+            </select>
+        </div>
+        <div class="country-cards" id="country-cards-container"></div>
+    </main>
+
+    <script src="./index.js"></script>
+</body>
+</html>
