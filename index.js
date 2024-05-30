@@ -44,16 +44,16 @@ function createCountryCard(country) {
   const capital = country.capital && country.capital[0];
 
   return `
-        <div class="card">
-            <img src="${flagUrl}" alt="${name} flag">
-            <div class="card-content">
-                <h2>${name}</h2>
-                <p><strong>Population:</strong> ${population}</p>
-                <p><strong>Region:</strong> ${region}</p>
-                <p><strong>Capital:</strong> ${capital || "N/A"}</p>
-            </div>
-        </div>
-    `;
+    <div class="card">
+      <img src="${flagUrl}" alt="${name} flag">
+      <div class="card-content">
+        <h2>${name}</h2>
+        <p><strong>Population:</strong> ${population}</p>
+        <p><strong>Region:</strong> ${region}</p>
+        <p><strong>Capital:</strong> ${capital || "N/A"}</p>
+      </div>
+    </div>
+  `;
 }
 
 // Function to search countries by name
@@ -79,7 +79,11 @@ function toggleTheme() {
   isDarkMode = !isDarkMode;
   document.body.classList.toggle("dark-mode", isDarkMode);
   const currentTheme = isDarkMode ? "Light Mode" : "Dark Mode";
-  themeToggleBtn.textContent = currentTheme;
+
+  themeToggleBtn.innerHTML = `
+    <img src="path/to/crescent-icon.png" alt="Crescent Icon">
+    ${currentTheme}
+  `;
 }
 
 // Function to show country detail
@@ -100,49 +104,4 @@ function attachClickListeners() {
       showCountryDetail(countryName);
     });
   });
-}
-
-// Function to toggle between light and dark mode
-function toggleTheme() {
-  // isDarkMode = !isDarkMode;
-  // document.body.classList.toggle("dark-mode", isDarkMode);
-  // const currentTheme = isDarkMode ? "Light Mode" : "Dark Mode";
-  // themeToggleBtn.textContent = currentTheme;
-
-  document.body.classList.toggle("dark-mode");
-  const currentTheme = document.body.classList.contains("dark-mode")
-    ? "Light Mode"
-    : "Dark Mode";
-  themeToggleBtn.textContent = currentTheme;
-
-  // Toggle crescent shape color
-  themeToggleBtn.classList.toggle(
-    "dark-mode",
-    document.body.classList.contains("dark-mode")
-  );
-  themeToggleBtn.classList.toggle(
-    "light-mode",
-    !document.body.classList.contains("dark-mode")
-  );
-
-  // Update theme variables for light mode
-  if (!isDarkMode) {
-    document.documentElement.style.setProperty("--bg-color", "hsl(0, 0%, 98%)");
-    document.documentElement.style.setProperty(
-      "--text-color",
-      "hsl(200, 15%, 8%)"
-    );
-    document.documentElement.style.setProperty(
-      "--header-bg-color",
-      "hsl(0, 0%, 100%)"
-    );
-    document.documentElement.style.setProperty(
-      "--input-bg-color",
-      "hsl(0, 0%, 98%)"
-    );
-    document.documentElement.style.setProperty(
-      "--element-bg-color",
-      "hsl(0, 0%, 100%)"
-    );
-  }
 }
