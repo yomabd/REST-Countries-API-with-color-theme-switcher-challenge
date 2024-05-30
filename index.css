@@ -153,3 +153,20 @@ body.dark-mode {
     --input-bg-color: hsl(209, 23%, 25%);
     --element-bg-color: hsl(209, 23%, 25%);
 }
+
+/* Light Mode */
+:root {
+    --bg-color: hsl(0, 0%, 98%);
+    --text-color: hsl(200, 15%, 8%);
+    --header-bg-color: hsl(0, 0%, 100%);
+    --input-bg-color: hsl(0, 0%, 98%);
+    --element-bg-color: hsl(0, 0%, 100%);
+}
+
+body.light-mode {
+    --bg-color: hsl(0, 0%, 98%);
+    --text-color: hsl(200, 15%, 8%);
+    --header-bg-color: hsl(0, 0%, 100%);
+    --input-bg-color: hsl(0, 0%, 98%);
+    --element-bg-color: hsl(0, 0%, 100%);
+}
